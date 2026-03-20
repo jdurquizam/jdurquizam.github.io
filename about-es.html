@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mí | Jose David Urquiza Munoz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <img src="profile.jpg" alt="Jose David Urquiza Munoz" class="profile-img">
+        <h2>Jose David<br>Urquiza Muñoz</h2>
+        
+        <div class="contact-info">
+            <p><strong>Dirección:</strong><br>Jena - Iquitos, Alemania - Perú</p>
+            <p><strong>Email:</strong><br><a href="mailto:jurquizal@bgc-jena.mpg.de">jurquizal@bgc-jena.mpg.de</a></p>
+            <p><a href="https://scholar.google.com/citations?hl=en&user=8Au2odkAAAAJ" target="_blank">Google Scholar</a></p>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index-es.html">Inicio</a>
+            <a href="about-es.html" class="active">Sobre Mí</a>
+            <a href="research-es.html">Investigación</a>
+            <a href="teaching-es.html">Docencia</a>
+            <a href="other-es.html">Otros</a>
+        </nav>
+
+        <div class="language-toggle">
+            <a href="about.html">EN</a> | <strong>ES</strong>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle">🌙 Modo Oscuro</button>
+    </aside>
+
+    <main class="content">
+        <section class="home-intro" style="max-width: 750px; margin: 0 auto;">
+            <h1 style="border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 30px;">Mi Trayectoria</h1>
+            
+            <p>Soy un científico peruano, nativo americano criado en el corazón de la Amazonía, y un investigador profundamente comprometido con el futuro de los bosques tropicales. Mi vida y mi carrera han sido moldeadas por el entorno en el que crecí, dándome una profunda motivación personal para comprender y proteger el ecosistema amazónico.</p>
+            
+            <p>Actualmente, desempeño un rol dual: soy <strong>Investigador Postdoctoral en el Instituto Max Planck de Biogeoquímica (MPI-BGC)</strong> en Jena, Alemania, y <strong>Profesor Auxiliar en la Universidad Nacional de la Amazonía Peruana (UNAP)</strong> en Iquitos, Perú, la cual es también mi <em>alma mater</em>.</p>
+
+            <h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Inicios de mi Carrera y Formación Académica</h3>
+            <p>Mi trayectoria académica comenzó en la UNAP, donde obtuve mi Licenciatura en Ecología Tropical en la Facultad de Ciencias Forestales y una Maestría en Gestión Ambiental en la Facultad de Agronomía. Tras mis estudios, me uní al cuerpo docente de la UNAP, impartiendo cursos sobre Ecología de Ecosistemas Amazónicos, Modelamiento Ecológico, SIG y Teledetección. La docencia me permitió integrar mis cursos directamente en mi investigación, colaborando con colegas y estudiantes en estudios de inventario forestal, muestreo de suelos y teledetección de regiones no mapeadas de la Amazonía.</p>
+
+            <h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Punto de Inflexión: Dinámica de Disturbios a Gran Escala</h3>
+            <p>Un hito importante en mi carrera fue mi participación en un proyecto a gran escala financiado por la NASA titulado <em>Tropical Forest Tree Species Community Assemblage along Wind Disturbance Gradients</em>. Trabajando junto a investigadores del Laboratorio Nacional Lawrence Berkeley, lideré el trabajo de campo tanto en Iquitos, Perú, como en Manaos, Brasil. Aprovechando mi experiencia en campo, establecí extensas parcelas de inventario en regiones afectadas por vientos en diferentes etapas de recuperación.</p>
+            <p>Para desarrollar las habilidades técnicas necesarias para este trabajo, busqué formación internacional. Viajé a la Universidad Estatal de Pensilvania (EE.UU., 2013) para estudiar Inventario Forestal y Teledetección, a la Universidad Rakuno Gakuen (Japón, 2015) para Teledetección de Recursos Forestales, y a la Universidad de Melbourne (Australia, 2017) para minería de datos como parte del proyecto REDD+.</p>
+
+            <h3 style="text-align: left; margin-top: 30px; margin-bottom: 15px;">Conectando Dos Mundos: Jena e Iquitos</h3>
+            <p>Esa perspectiva global me llevó finalmente a Alemania, donde fui aceptado en la Escuela Internacional de Investigación Max Planck para Ciclos Biogeoquímicos Globales. Defendí con éxito mi doctorado en la Universidad Friedrich Schiller de Jena y el MPI-BGC en 2025. Mi objetivo final es dar forma a la práctica científica conectando la ciencia básica de los ecosistemas con conocimientos aplicables, contribuyendo a la investigación de vanguardia mientras represento a las comunidades amazónicas donde comenzó mi historia.</p>
+        </section>
+    </main>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            toggleBtn.textContent = '☀️ Modo Claro';
+        }
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.textContent = '☀️ Modo Claro';
+            } else {
+                localStorage.setItem('theme', 'light');
+                toggleBtn.textContent = '🌙 Modo Oscuro';
+            }
+        });
+    </script>
+</body>
+</html>
