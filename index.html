@@ -1,66 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jose David Urquiza Munoz | Researcher</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* Basic Setup */
+:root {
+    --text-color: #333;
+    --link-color: #0366d6;
+    --hover-color: #0056b3;
+    --sidebar-bg: #f8f9fa;
+    --border-color: #e1e4e8;
+}
 
-    <header>
-        <div class="header-container">
-            <img src="profile.jpg" alt="Jose David Urquiza Munoz" class="profile-img">
-            <div class="header-text">
-                <h1>Jose David Urquiza Munoz</h1>
-                <p class="subtitle">[Your Current Title, e.g., Ph.D. Candidate / Postdoctoral Researcher]</p>
-                <p>[Your Institution / University] | [Your Department]</p>
-            </div>
-        </div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#research">Research & Publications</a>
-            <a href="cv.pdf" target="_blank">CV (PDF)</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-color);
+    display: flex; /* Creates the side-by-side layout */
+    line-height: 1.6;
+}
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am a researcher specializing in <strong>[Your Broad Field, e.g., Computer Science / Materials Engineering]</strong>. My work primarily focuses on <strong>[Your Specific Niche or Main Topic]</strong>.</p>
-            <p>I completed my <strong>[Degree, e.g., Master's / Ph.D.]</strong> at <strong>[Previous University]</strong>, where my research explored <strong>[Briefly mention your thesis topic or main project]</strong>. Currently, I am investigating <strong>[Mention what you are working on right now]</strong>.</p>
-        </section>
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    height: 100vh; /* Full screen height */
+    position: fixed; /* Keeps sidebar in place while scrolling */
+    left: 0;
+    top: 0;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    padding: 40px 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Allows scrolling inside sidebar if needed */
+}
 
-        <section id="research">
-            <h2>Selected Publications</h2>
-            <ul class="publication-list">
-                <li>
-                    <strong>Urquiza Munoz, J. D.</strong>, [Co-author Name]. (2025). <em>[Title of Your Paper].</em> [Name of Journal or Conference], [Volume(Issue)], [Pages]. 
-                    <br><a href="[Link to DOI or URL]" target="_blank">[Link to Paper]</a> | <a href="[Link to PDF if you have one]" target="_blank">[PDF]</a>
-                </li>
-                <li>
-                    [First Author Name], <strong>Urquiza Munoz, J. D.</strong>, & [Co-author Name]. (2024). <em>[Title of Another Paper].</em> [Name of Journal or Conference].
-                    <br><a href="[Link to DOI or URL]" target="_blank">[Link to Paper]</a>
-                </li>
-            </ul>
-        </section>
+.profile-img {
+    width: 100%;
+    max-width: 180px;
+    border-radius: 8px; /* Slight rounded corners, change to 50% for circles */
+    display: block;
+    margin: 0 auto 20px;
+}
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>I am always open to collaborations and academic discussions. Please feel free to reach out to me via email or connect with me on the platforms below.</p>
-            <ul>
-                <li><strong>Email:</strong> <a href="mailto:[your.email@university.edu]">[your.email@university.edu]</a></li>
-                <li><strong>Google Scholar:</strong> <a href="[Link to your Google Scholar]" target="_blank">My Scholar Profile</a></li>
-                <li><strong>LinkedIn:</strong> <a href="[Link to your LinkedIn]" target="_blank">linkedin.com/in/[your-handle]</a></li>
-                <li><strong>GitHub:</strong> <a href="https://github.com/[your-github-username]" target="_blank">github.com/[your-github-username]</a></li>
-            </ul>
-        </section>
-    </main>
+.sidebar h2 {
+    font-size: 1.4rem;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
 
-    <footer>
-        <p>&copy; 2026 Jose David Urquiza Munoz. Built and hosted with GitHub Pages.</p>
-    </footer>
+.contact-info {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
 
-</body>
-</html>
+.contact-info p {
+    margin: 5px 0;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--link-color);
+}
+
+.nav-links a.active {
+    color: var(--link-color);
+    font-weight: bold;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Styles */
+.content {
+    margin-left: 250px; /* Pushes content to the right of the sidebar */
+    padding: 50px;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.research-intro {
+    margin-bottom: 40px;
+}
+
+.research-intro p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.publications h3 {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 40px;
+    font-size: 1.5rem;
+}
+
+.publications ul {
+    list-style-type: none; /* Removes default bullet points */
+    padding: 0;
+}
+
+.publications li {
+    margin-bottom: 15px;
+    text-indent: -40px; /* Creates the hanging indent effect for publications */
+    padding-left: 40px;
+}
+
+.publications .year {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Mobile Responsiveness: Stacks sidebar on top of content on small screens */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 20px;
+    }
+    
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .nav-links a {
+        border-bottom: none;
+    }
+}
