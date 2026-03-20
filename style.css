@@ -9,7 +9,6 @@
     --border-color: #e1e4e8;
 }
 
-/* Dark Mode Overrides */
 body.dark-mode {
     --bg-color: #121212;
     --text-color: #e0e0e0;
@@ -27,13 +26,11 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-color); 
     color: var(--text-color);
-    
-    /* Forces the whole website into a centered column */
     display: flex;
     flex-direction: column; 
     align-items: center; 
     line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth fade effect */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -54,20 +51,17 @@ a:hover {
     width: 100%;
     max-width: 800px; 
     height: auto;
-    position: relative; 
     background-color: transparent;
-    border-right: none;
     border-bottom: 1px solid var(--border-color); 
     padding: 50px 20px 20px;
     box-sizing: border-box;
-    text-align: center; /* Centers everything in the top section */
+    text-align: center;
 }
 
-/* Profile Image - Circular */
 .profile-img {
-    width: 240px;
-    height: 240px;
-    border-radius: 70%;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
     object-fit: cover;
     display: block;
     margin: 0 auto 20px auto; 
@@ -80,7 +74,6 @@ a:hover {
     margin: 0 0 20px 0;
 }
 
-/* Contact info aligned in a neat horizontal row */
 .contact-info {
     font-size: 1rem;
     margin-bottom: 25px;
@@ -90,12 +83,10 @@ a:hover {
     flex-wrap: wrap;
 }
 
-.contact-info p {
-    margin: 0;
-}
+.contact-info p { margin: 0; }
 
 /* =========================================
-   4. Navigation & Dark Mode Button
+   4. Navigation, Language & Dark Mode
    ========================================= */
 .nav-links {
     display: flex;
@@ -106,7 +97,6 @@ a:hover {
 }
 
 .nav-links a {
-    text-decoration: none;
     color: var(--text-color);
     padding: 8px 10px;
     border-bottom: 2px solid transparent;
@@ -114,17 +104,20 @@ a:hover {
     transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-.nav-links a:hover {
-    color: var(--link-color);
-}
-
+.nav-links a:hover { color: var(--link-color); }
 .nav-links a.active {
     color: var(--link-color);
     font-weight: bold;
-    border-bottom: 2px solid var(--link-color); /* Underlines the active page */
+    border-bottom: 2px solid var(--link-color);
 }
 
-/* Style for the Dark Mode Button */
+.language-toggle {
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+.language-toggle a { color: var(--text-color); }
+
 .theme-toggle {
     background: transparent;
     border: 1px solid var(--border-color);
@@ -133,71 +126,56 @@ a:hover {
     border-radius: 20px;
     cursor: pointer;
     font-size: 0.9rem;
-    margin-top: 25px;
+    margin-top: 20px;
     transition: all 0.3s ease;
 }
 
-.theme-toggle:hover {
-    background-color: var(--border-color);
-}
+.theme-toggle:hover { background-color: var(--border-color); }
 
 /* =========================================
    5. Main Content Area
    ========================================= */
 .content {
-    margin-left: 0; 
     padding: 40px 20px;
     max-width: 800px;
     width: 100%;
     box-sizing: border-box;
 }
 
-.research-intro, .home-intro {
-    margin-bottom: 40px;
-}
-
-/* Paragraphs are now cleanly justified */
-.research-intro p, .home-intro p {
+.home-intro, .research-intro { margin-bottom: 40px; }
+.home-intro p, .research-intro p {
     margin-bottom: 15px;
     text-align: justify; 
 }
 
-/* Section Titles remain centered */
-h1, h2, h3 {
-    text-align: center;
-}
-
-.publications h3, .news-updates h2 {
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 10px;
-    margin-top: 40px;
-    font-size: 1.5rem;
-    transition: border-color 0.3s ease;
-}
+h1, h2, h3 { text-align: center; }
 
 /* =========================================
-   6. Publication & News Lists
+   6. Custom Components (Video & Lists)
    ========================================= */
-.publications ul, .news-updates ul {
+.featured-media {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.video-container {
+    max-width: 750px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid var(--border-color);
+    background-color: #000;
+}
+
+.news-updates ul {
     list-style-type: none;
     padding: 0;
     max-width: 750px;
-    margin: 0 auto; /* Centers the list block itself */
-}
-
-.publications li {
-    margin-bottom: 15px;
-    text-indent: -40px; /* Hanging indent for academic formatting */
-    padding-left: 40px;
-    text-align: left; /* Keeps text readable from left to right */
+    margin: 0 auto;
 }
 
 .news-updates li {
     margin-bottom: 10px;
     text-align: left;
-}
-
-.publications .year {
-    font-weight: bold;
-    margin-right: 10px;
 }
