@@ -9,13 +9,13 @@
 <body>
 
     <aside class="sidebar">
-        <img src="profile.JPG" alt="Jose David Urquiza Munoz" class="profile-img" >
-        <h2>Jose David Urquiza Munoz</h2>
+        <img src="profile.jpg" alt="Jose David Urquiza Munoz" class="profile-img">
+        <h2>Jose David<br>Urquiza Munoz</h2>
         
         <div class="contact-info">
-            <p><strong>Address:</strong><br>Jena - Germany,  Iquitos - Peru</p>
+            <p><strong>Address:</strong><br>Jena - Iquitos, Germany - Peru</p>
             <p><strong>Email:</strong><br><a href="mailto:jurquizal@bgc-jena.mpg.de">jurquizal@bgc-jena.mpg.de</a></p>
-            <p><strong>Publication list:</strong><br><a href="https://scholar.google.com/citations?hl=en&user=8Au2odkAAAAJ" target="_blank">Google Scholar</a></p>
+            <p><a href="https://scholar.google.com/citations?hl=en&user=8Au2odkAAAAJ" target="_blank">Google Scholar</a></p>
         </div>
 
         <nav class="nav-links">
@@ -26,15 +26,17 @@
             <a href="other.html">Other</a>
         </nav>
 
+        <div class="language-toggle">
+            <strong>EN</strong> | <a href="index-es.html">ES</a>
+        </div>
+
         <button id="theme-toggle" class="theme-toggle">🌙 Dark Mode</button>
     </aside>
 
     <main class="content">
-        
         <section class="home-intro">
             <h1>Hallo! curious.</h1>
-            <p>I am Jose David Urquiza Muñoz. Currently, I am a <strong>Postdoctoral Researcher</strong> at the <strong>Max Planck Institute for Biogeochemistry (MPI-BGC)</strong> in Jena, Germany, and
-            <strong>Assistant Profesor</strong> at the <strong>Universidad Nacional de la Amazonia Peruana (UNAP)</strong> in Iquitos, Peru.</p>
+            <p>I am Jose David Urquiza Muñoz. Currently, I am a <strong>Postdoctoral Researcher</strong> at the <strong>Max Planck Institute for Biogeochemistry (MPI-BGC)</strong> in Jena, Germany, and an <strong>Assistant Professor</strong> at the <strong>Universidad Nacional de la Amazonia Peruana (UNAP)</strong> in Iquitos, Peru.</p>
             
             <p>In recent years, my work has focused heavily on tropical forest ecology, particularly exploring how extreme climate events and storms affect the Amazon basin. My research interests lie at the intersection of <strong>geospatial ecology</strong> and <strong>biogeochemical processes</strong>.</p>
             
@@ -42,42 +44,30 @@
         </section>
 
         <section class="news-updates">
-            <h2>Recent News</h2>
+            <h2 style="border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-top: 40px;">Recent News</h2>
             <ul>
-                <li>
-                    <strong>2025:</strong> Successfully defended my Ph.D. at Friedrich Schiller University Jena and the Max Planck Institute for Biogeochemistry.
-                </li>
-                <li>
-                <strong>2024:</strong> Our paper, <em>"Increased Occurrence of Large-Scale Windthrows Across the Amazon Basin,"</em> was published in AGU Advances! <a href="https://doi.org/10.1029/2023AV001030" target="_blank">Read it here</a>.
-                </li>
-                <li>
-                    <strong>2023:</strong> Co-authored a study on windthrow characteristics and their regional association with rainfall and soil in the Amazon, published in <em>Environmental Research Letters</em>.
-                </li>
+                <li><strong>2024:</strong> Our paper, <em>"Increased Occurrence of Large-Scale Windthrows Across the Amazon Basin,"</em> was published in AGU Advances! <a href="https://doi.org/10.1029/2023AV001030" target="_blank">Read it here</a>.</li>
+                <li><strong>2023:</strong> Co-authored a study on windthrow characteristics and their regional association with rainfall and soil in the Amazon, published in <em>Environmental Research Letters</em>.</li>
+                <li><strong>2022:</strong> Successfully defended my Ph.D. at Friedrich Schiller University Jena and the Max Planck Institute for Biogeochemistry.</li>
             </ul>
         </section>
-
     </main>
 
     <script>
         const toggleBtn = document.getElementById('theme-toggle');
         const body = document.body;
-        
-        // Check if the user previously chose dark mode
         if (localStorage.getItem('theme') === 'dark') {
             body.classList.add('dark-mode');
             toggleBtn.textContent = '☀️ Light Mode';
         }
-
-        // What happens when the button is clicked
         toggleBtn.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
-            
             if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark'); // Save preference
-                toggleBtn.textContent = '☀️ Light Mode'; // Change button text
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.textContent = '☀️ Light Mode';
             } else {
-                localStorage.setItem('theme', 'light'); // Save preference
-                toggleBtn.textContent = '🌙 Dark Mode'; // Change button text
+                localStorage.setItem('theme', 'light');
+                toggleBtn.textContent = '🌙 Dark Mode';
             }
         });
     </script>
