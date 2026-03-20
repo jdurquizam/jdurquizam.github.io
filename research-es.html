@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigación | Jose David Urquiza Munoz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <img src="profile.jpg" alt="Jose David Urquiza Munoz" class="profile-img">
+        <h2>Jose David<br>Urquiza Muñoz</h2>
+        
+        <div class="contact-info">
+            <p><strong>Dirección:</strong><br>Jena - Iquitos, Alemania - Perú</p>
+            <p><strong>Email:</strong><br><a href="mailto:jurquizal@bgc-jena.mpg.de">jurquizal@bgc-jena.mpg.de</a></p>
+            <p><a href="https://scholar.google.com/citations?hl=en&user=8Au2odkAAAAJ" target="_blank">Google Scholar</a></p>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index-es.html">Inicio</a>
+            <a href="about-es.html">Sobre Mí</a>
+            <a href="research-es.html" class="active">Investigación</a>
+            <a href="teaching-es.html">Docencia</a>
+            <a href="other-es.html">Otros</a>
+        </nav>
+
+        <div class="language-toggle">
+            <a href="research.html">EN</a> | <strong>ES</strong>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle">🌙 Modo Oscuro</button>
+    </aside>
+
+    <main class="content">
+        
+        <section class="featured-media">
+            <h2 style="border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px;">Video Destacado de mi Investigación</h2>
+            <div class="video-container">
+                <iframe src="https://lt.org/embed/publication-plus/83ad64a9-caa0-4a43-aec8-38df67d9155f/" style="aspect-ratio: 16/9; width: 100%; border: 0; margin: 0; padding: 0; display: block;" allowfullscreen title="Latest Thinking - Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"></iframe>
+            </div>
+            <p style="text-align: center; font-size: 0.9rem; margin-top: 10px; color: #777;">Un breve resumen de mis hallazgos recientes sobre los derribos por viento a gran escala en la cuenca del Amazonas.</p>
+        </section>
+
+        <section class="publications">
+            <h2 style="border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-top: 40px; margin-bottom: 20px;">Publicaciones</h2>
+            <div style="text-align: left; max-width: 750px; margin: 0 auto;">
+                <script src="https://bibbase.org/show?bib=https%3A%2F%2Fbibbase.org%2Fnetwork%2Ffiles%2FHgGCCbaTkFyYd6iSq&noBootstrap=1&jsonp=1"></script>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            toggleBtn.textContent = '☀️ Modo Claro';
+        }
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.textContent = '☀️ Modo Claro';
+            } else {
+                localStorage.setItem('theme', 'light');
+                toggleBtn.textContent = '🌙 Modo Oscuro';
+            }
+        });
+    </script>
+</body>
+</html>
