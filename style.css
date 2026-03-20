@@ -42,8 +42,8 @@ body {
     transition: all 0.3s ease;
 }
     .profile-img {
-    width: 140px;       /* Makes the image smaller */
-    height: 140px;      /* Keeps the height perfectly matched to the width */
+    width: 40px;       /* Makes the image smaller */
+    height: 40px;      /* Keeps the height perfectly matched to the width */
     border-radius: 50%; /* Turns the image into a perfect circle */
     object-fit: cover;  /* Prevents the image from squishing or stretching */
     display: block;
