@@ -41,7 +41,7 @@
                 </li>
                 <li>
                     Smith, A., <strong>Doe, J.</strong> (2024). <em>Predictive Modeling for Protein Folding.</em> Bioinformatics Today, 15(1), 45-60.
-                    <br><a href="https://doi.org/your-doi-here" target="_blank">[Link to Paper]</a> | <a href="#" target="_blank">[PDF]</a>
+                    <br><a href="https://doi.org/yo cur-doi-here" target="_blank">[Link to Paper]</a> | <a href="#" target="_blank">[PDF]</a>
                 </li>
             </ul>
         </section>
