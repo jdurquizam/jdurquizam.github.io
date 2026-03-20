@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Jose David Urquiza Munoz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <img src="profile.jpg" alt="Jose David Urquiza Munoz" class="profile-img">
+        <h2>Jose David<br>Urquiza Muñoz</h2>
+        
+        <div class="contact-info">
+            <p><strong>Dirección:</strong><br>Jena - Iquitos, Alemania - Perú</p>
+            <p><strong>Email:</strong><br><a href="mailto:jurquizal@bgc-jena.mpg.de">jurquizal@bgc-jena.mpg.de</a></p>
+            <p><a href="https://scholar.google.com/citations?hl=en&user=8Au2odkAAAAJ" target="_blank">Google Scholar</a></p>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index-es.html" class="active">Inicio</a>
+            <a href="about-es.html">Sobre Mí</a>
+            <a href="research-es.html">Investigación</a>
+            <a href="teaching-es.html">Docencia</a>
+            <a href="other-es.html">Otros</a>
+        </nav>
+
+        <div class="language-toggle">
+            <a href="index.html">EN</a> | <strong>ES</strong>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle">🌙 Modo Oscuro</button>
+    </aside>
+
+    <main class="content">
+        <section class="home-intro">
+            <h1>¡Hola! Bienvenidos.</h1>
+            <p>Soy Jose David Urquiza Muñoz. Actualmente, soy <strong>Investigador Postdoctoral</strong> en el <strong>Instituto Max Planck de Biogeoquímica (MPI-BGC)</strong> en Jena, Alemania, y <strong>Profesor Auxiliar</strong> en la <strong>Universidad Nacional de la Amazonía Peruana (UNAP)</strong> en Iquitos, Perú.</p>
+            
+            <p>En los últimos años, mi trabajo se ha centrado fuertemente en la ecología de los bosques tropicales, explorando particularmente cómo los eventos climáticos extremos y las tormentas afectan la cuenca amazónica. Mis intereses de investigación se sitúan en la intersección de la <strong>ecología geoespacial</strong> y los <strong>procesos biogeoquímicos</strong>.</p>
+            
+            <p>Específicamente, investigo los impactos, impulsores y mecanismos de disturbios a gran escala—como la mortalidad de árboles impulsada por tormentas (derribos por viento o <em>windthrows</em>)—utilizando teledetección multiespectral, Sistemas de Información Geográfica (SIG) y datos de campo. Mi objetivo final es conectar la ciencia básica de los ecosistemas con conocimientos aplicables para comprender mejor el cambio climático global y la dinámica del carbono.</p>
+        </section>
+
+        <section class="news-updates">
+            <h2 style="border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-top: 40px;">Noticias Recientes</h2>
+            <ul>
+                <li><strong>2024:</strong> Nuestro artículo, <em>"Increased Occurrence of Large-Scale Windthrows Across the Amazon Basin,"</em> fue publicado en AGU Advances. <a href="https://doi.org/10.1029/2023AV001030" target="_blank">Leer aquí</a>.</li>
+                <li><strong>2023:</strong> Fui coautor de un estudio sobre las características de los derribos por viento y su asociación regional con la lluvia y el suelo en la Amazonía, publicado en <em>Environmental Research Letters</em>.</li>
+                <li><strong>2022:</strong> Defendí exitosamente mi doctorado en la Universidad Friedrich Schiller de Jena y el Instituto Max Planck de Biogeoquímica.</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            toggleBtn.textContent = '☀️ Modo Claro';
+        }
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.textContent = '☀️ Modo Claro';
+            } else {
+                localStorage.setItem('theme', 'light');
+                toggleBtn.textContent = '🌙 Modo Oscuro';
+            }
+        });
+    </script>
+</body>
+</html>
