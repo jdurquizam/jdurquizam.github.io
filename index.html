@@ -17,7 +17,16 @@
             <p><strong>Email:</strong><br><a href="mailto:jurquiza@bgc-jena.mpg.de">jurquiza@bgc-jena.mpg.de</a></p>
             <p><a href="https://scholar.google.com/citations?user=8Au2odkAAAAJ&hl=en" target="_blank">Google Scholar</a></p>
         </div>
+        
+        <nav class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="research.html">Research</a>
+            <a href="teaching.html">Teaching</a>
+            <a href="other.html">Other</a>
+        </nav>
 
+        <button id="theme-toggle" class="theme-toggle">🌙 Dark Mode</button>
         <nav class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -68,6 +77,30 @@
         </section>
 
     </main>
+<script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        // Check if the user previously chose dark mode
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            toggleBtn.textContent = '☀️ Light Mode';
+        }
 
+        // What happens when the button is clicked
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark'); // Save preference
+                toggleBtn.textContent = '☀️ Light Mode'; // Change button text
+            } else {
+                localStorage.setItem('theme', 'light'); // Save preference
+                toggleBtn.textContent = '🌙 Dark Mode'; // Change button text
+            }
+        });
+    </script>
+</body>
+</html>
 </body>
 </html>
