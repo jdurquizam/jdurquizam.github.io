@@ -109,6 +109,22 @@
                 toggleBtn.textContent = '🌙 Dark Mode';
             }
         });
+
+        // --- Carousel Logic ---
+        const carousel = document.getElementById('news-carousel');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+
+        // Scroll right when "Next" is clicked
+        nextBtn.addEventListener('click', () => {
+            // Scrolls by the width of one card + the gap (280 + 20)
+            carousel.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+
+        // Scroll left when "Prev" is clicked
+        prevBtn.addEventListener('click', () => {
+            carousel.scrollBy({ left: -300, behavior: 'smooth' });
+        });
     </script>
 </body>
 </html>
