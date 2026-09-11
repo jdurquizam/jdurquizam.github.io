@@ -72,23 +72,60 @@
         </section>
     </main>
 
+   <footer>
+        <p>&copy; 2026 Jose David Urquiza Muñoz. Built and hosted with GitHub Pages.</p>
+        
+       <div class="visitor-counter">
+            <a href="https://hits.sh/jdurquizam.github.io/">
+                <img alt="Visitor Count" src="https://hits.sh/jdurquizam.github.io.svg?style=for-the-badge&label=Visits&color=2b7a4b"/>
+            </a>
+        </div>
+    </footer>
+
     <script>
+        // ==========================================
+        // 1. Dark Mode Logic (Runs on all pages)
+        // ==========================================
         const toggleBtn = document.getElementById('theme-toggle');
         const body = document.body;
-        if (localStorage.getItem('theme') === 'dark') {
-            body.classList.add('dark-mode');
-            toggleBtn.textContent = '☀️ Modo Claro';
-        }
-        toggleBtn.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            if (body.classList.contains('dark-mode')) {
-                localStorage.setItem('theme', 'dark');
-                toggleBtn.textContent = '☀️ Modo Claro';
-            } else {
-                localStorage.setItem('theme', 'light');
-                toggleBtn.textContent = '🌙 Modo Oscuro';
+        
+        // Safety check to ensure the button exists on this page
+        if (toggleBtn) {
+            if (localStorage.getItem('theme') === 'dark') {
+                body.classList.add('dark-mode');
+                toggleBtn.textContent = '☀️ Light Mode';
             }
-        });
+
+            toggleBtn.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                    toggleBtn.textContent = '☀️ Light Mode';
+                } else {
+                    localStorage.setItem('theme', 'light');
+                    toggleBtn.textContent = '🌙 Dark Mode';
+                }
+            });
+        }
+
+        // ==========================================
+        // 2. Carousel Logic (Only runs on Home page)
+        // ==========================================
+        const carousel = document.getElementById('news-carousel');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+
+        // Safety check: Only run this if the carousel actually exists on this page
+        if (carousel && nextBtn && prevBtn) {
+            nextBtn.addEventListener('click', () => {
+                carousel.scrollBy({ left: 300, behavior: 'smooth' });
+            });
+
+            prevBtn.addEventListener('click', () => {
+                carousel.scrollBy({ left: -300, behavior: 'smooth' });
+            });
+        }
     </script>
 </body>
 </html>
